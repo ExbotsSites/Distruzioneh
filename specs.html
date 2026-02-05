@@ -10,12 +10,16 @@
             --neon-blue: #00f2ea;
             --neon-purple: #9146FF;
             --bg-dark: #0f0c29;
+            --card-white: #ffffff;
         }
 
         body {
             font-family: 'Rajdhani', sans-serif;
             margin: 0;
-            background: linear-gradient(-45deg, #0f0c29, #1a1a2e, #0f0c29);
+            /* Sfondo animato coordinato alla home */
+            background: linear-gradient(-45deg, #0f0c29, #1a1a2e, #24243e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white;
             display: flex;
             flex-direction: column;
@@ -24,68 +28,115 @@
             min-height: 100vh;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .header { text-align: center; margin-bottom: 60px; }
+        
         .back-btn {
             text-decoration: none;
             color: white;
             font-size: 0.9rem;
-            border: 1px solid var(--neon-blue);
-            padding: 8px 20px;
-            border-radius: 20px;
-            transition: 0.3s;
+            border: 2px solid var(--neon-purple);
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
-        .back-btn:hover { background: var(--neon-blue); color: black; box-shadow: 0 0 15px var(--neon-blue); }
+
+        .back-btn:hover {
+            background: var(--neon-purple);
+            box-shadow: 0 0 20px var(--neon-purple);
+            transform: scale(1.05);
+        }
+
+        h1 { font-size: 2.8rem; margin-top: 40px; letter-spacing: 5px; text-shadow: 0 0 10px rgba(145, 70, 255, 0.5); }
 
         /* Griglia delle Specs */
         .specs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px 30px;
+            gap: 60px 30px;
             width: 100%;
             max-width: 1000px;
+            margin-top: 20px;
         }
 
+        /* Card in stile "Canva" ma migliorata */
         .spec-card {
             position: relative;
-            background: white;
-            border-radius: 15px;
-            padding: 30px 15px 15px 15px;
+            background: var(--card-white);
+            border-radius: 20px;
+            padding: 40px 20px 25px 20px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
         }
 
+        /* Effetto Glow e Ingrandimento */
         .spec-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 0 25px var(--neon-purple);
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 0 35px var(--neon-purple);
         }
 
-        /* Icona Hardware */
+        /* Icona Hardware sporgente */
         .spec-icon {
             position: absolute;
-            top: -25px;
+            top: -30px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: #222;
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: #1a1a2e;
+            border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
+            font-size: 28px;
             border: 3px solid var(--neon-purple);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .spec-label { color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .spec-name { color: #222; font-size: 1.3rem; font-weight: 700; margin-top: 5px; }
+        .spec-label { 
+            color: #888; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
 
+        .spec-name { 
+            color: #1a1a2e; 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 0.75rem;
+            color: #ff0050;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .specs-grid { gap: 55px 20px; }
+        }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <a href="index.html" class="back-btn">← TORNA AI LINKS</a>
-        <h1 style="font-size: 2.5rem; margin-top: 30px; letter-spacing: 4px;">MY SETUP</h1>
+        <a href="index.html" class="back-btn">← Torna ai Social</a>
+        <h1>MY SETUP</h1>
     </div>
 
     <div class="specs-grid">
@@ -93,37 +144,38 @@
         <div class="spec-card">
             <div class="spec-icon">🧠</div>
             <div class="spec-label">Processore (CPU)</div>
-            <div class="spec-name">Intel Core i9-13900K</div>
+            <div class="spec-name">Intel Core i7 13ª Gen</div>
         </div>
 
         <div class="spec-card">
             <div class="spec-icon">🎮</div>
             <div class="spec-label">Scheda Video (GPU)</div>
-            <div class="spec-name">NVIDIA RTX 4080 Super</div>
+            <div class="spec-name">NVIDIA GeForce RTX 3070 Ti</div>
         </div>
 
         <div class="spec-card">
             <div class="spec-icon">⚡</div>
             <div class="spec-label">Memoria RAM</div>
-            <div class="spec-name">32GB DDR5 6000MHz</div>
+            <div class="spec-name">32GB RAM</div>
         </div>
 
         <div class="spec-card">
-            <div class="spec-icon">🖥️</div>
-            <div class="spec-label">Monitor Principale</div>
-            <div class="spec-name">Samsung Odyssey G7 240Hz</div>
+            <div class="spec-icon">⌨️</div>
+            <div class="spec-label">Tastiera</div>
+            <div class="spec-name">Logitech G915 X</div>
         </div>
 
         <div class="spec-card">
             <div class="spec-icon">🖱️</div>
-            <div class="spec-label">Periferiche</div>
-            <div class="spec-name">Logitech G Pro X Superlight</div>
+            <div class="spec-label">Mouse</div>
+            <div class="spec-name">Glorious Model D</div>
+            <span class="coming-soon">In arrivo!</span>
         </div>
 
         <div class="spec-card">
-            <div class="spec-icon">📦</div>
-            <div class="spec-label">Case</div>
-            <div class="spec-name">NZXT H9 Elite White</div>
+            <div class="spec-icon">🎧</div>
+            <div class="spec-label">Audio</div>
+            <div class="spec-name">Streaming Setup</div>
         </div>
 
     </div>
