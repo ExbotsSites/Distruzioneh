@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom1nck Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --twitch: #9146FF;
+            --youtube: #FF0000;
+            --discord: #5865F2;
+            --tiktok: #00f2ea;
+            --bg-dark: #0f0c29;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .profile-header { margin-bottom: 50px; text-align: center; }
+        .profile-pic { width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 20px var(--twitch); }
+
+        /* Contenitore Cards */
+        .links-container { width: 100%; max-width: 350px; }
+
+        .card {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 45px; /* Spazio extra per l'icona sopra */
+            padding: 25px 15px 15px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Icona che sporge */
+        .card-icon {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #222;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 25px;
+        }
+
+        .card-title { color: #333; font-size: 1.4rem; margin: 10px 0 5px 0; font-weight: 700; }
+        .card-subtitle { color: #666; font-size: 0.9rem; text-transform: uppercase; }
+
+        /* Effetti Hover e Glow */
+        .card:hover {
+            transform: scale(1.08) translateY(-5px);
+        }
+
+        /* Glow dinamico basato sul social */
+        .card.twitch-card:hover { box-shadow: 0 0 30px var(--twitch); }
+        .card.youtube-card:hover { box-shadow: 0 0 30px var(--youtube); }
+        .card.discord-card:hover { box-shadow: 0 0 30px var(--discord); }
+        .card.tiktok-card:hover { box-shadow: 0 0 30px var(--tiktok); }
+        .card.specs-card { background: #333; border: 1px solid #555; }
+        .card.specs-card .card-title { color: white; }
+
+    </style>
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="distru.jpg" class="profile-pic">
+        <h1 style="letter-spacing: 3px;">_Distruzioneh</h1>
+        <p style="opacity: 0.8;">Streamer </p>
+    </div>
+
+    <div class="links-container">
+        
+        <a href="https://www.twitch.tv/distruzioneh__?sr=a" class="card twitch-card">
+            <div class="card-icon" style="background: var(--twitch);">🟣</div>
+            <div class="card-title">_Distruzioneh</div>
+            <div class="card-subtitle">su Twitch</div>
+        </a>
+
+        <a href="https://discord.gg/mGn7vvxgp3" class="card discord-card">
+            <div class="card-icon" style="background: var(--discord);">💬</div>
+            <div class="card-title">Il Regno di Distru</div>
+            <div class="card-subtitle">Entra nella Community</div>
+        </a>
+
+        <a href="https://www.tiktok.com/@_distruzioneh?_r=1&_t=ZN-93f1v03T0ru" class="card tiktok-card">
+            <div class="card-icon" style="background: #000;">🎵</div>
+            <div class="card-title">_Distruzioneh</div>
+            <div class="card-subtitle">Seguimi su TikTok</div>
+        </a>
+
+        <a href="specs.html" class="card specs-card">
+            <div class="card-icon" style="background: #555;">🖥️</div>
+            <div class="card-title">PC SPECS</div>
+            <div class="card-subtitle">Il mio Setup da Gaming</div>
+        </a>
+
+    </div>
+
+</body>
+</html>

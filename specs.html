@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Specs | Dom1nck_</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f2ea;
+            --neon-purple: #9146FF;
+            --bg-dark: #0f0c29;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            background: linear-gradient(-45deg, #0f0c29, #1a1a2e, #0f0c29);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .header { text-align: center; margin-bottom: 60px; }
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            border: 1px solid var(--neon-blue);
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--neon-blue); color: black; box-shadow: 0 0 15px var(--neon-blue); }
+
+        /* Griglia delle Specs */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px 30px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .spec-card {
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            padding: 30px 15px 15px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 0 25px var(--neon-purple);
+        }
+
+        /* Icona Hardware */
+        .spec-icon {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #222;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            border: 3px solid var(--neon-purple);
+        }
+
+        .spec-label { color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .spec-name { color: #222; font-size: 1.3rem; font-weight: 700; margin-top: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="index.html" class="back-btn">← TORNA AI LINKS</a>
+        <h1 style="font-size: 2.5rem; margin-top: 30px; letter-spacing: 4px;">MY SETUP</h1>
+    </div>
+
+    <div class="specs-grid">
+        
+        <div class="spec-card">
+            <div class="spec-icon">🧠</div>
+            <div class="spec-label">Processore (CPU)</div>
+            <div class="spec-name">Intel Core i9-13900K</div>
+        </div>
+
+        <div class="spec-card">
+            <div class="spec-icon">🎮</div>
+            <div class="spec-label">Scheda Video (GPU)</div>
+            <div class="spec-name">NVIDIA RTX 4080 Super</div>
+        </div>
+
+        <div class="spec-card">
+            <div class="spec-icon">⚡</div>
+            <div class="spec-label">Memoria RAM</div>
+            <div class="spec-name">32GB DDR5 6000MHz</div>
+        </div>
+
+        <div class="spec-card">
+            <div class="spec-icon">🖥️</div>
+            <div class="spec-label">Monitor Principale</div>
+            <div class="spec-name">Samsung Odyssey G7 240Hz</div>
+        </div>
+
+        <div class="spec-card">
+            <div class="spec-icon">🖱️</div>
+            <div class="spec-label">Periferiche</div>
+            <div class="spec-name">Logitech G Pro X Superlight</div>
+        </div>
+
+        <div class="spec-card">
+            <div class="spec-icon">📦</div>
+            <div class="spec-label">Case</div>
+            <div class="spec-name">NZXT H9 Elite White</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
