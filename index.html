@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dom1nck Hub</title>
+    
+    <title>Distruzioneh Hub</title>
+    
+    <link rel="icon" type="image/jpg" href="distru.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -25,6 +29,7 @@
             flex-direction: column;
             align-items: center;
             padding: 40px 20px;
+            min-height: 100vh;
         }
 
         @keyframes gradient {
@@ -34,25 +39,30 @@
         }
 
         .profile-header { margin-bottom: 50px; text-align: center; }
-        .profile-pic { width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 20px var(--twitch); }
+        .profile-pic { 
+            width: 110px; 
+            height: 110px; 
+            border-radius: 50%; 
+            border: 3px solid white; 
+            box-shadow: 0 0 25px var(--twitch);
+            object-fit: cover; /* Mantiene la foto proporzionata */
+        }
 
-        /* Contenitore Cards */
         .links-container { width: 100%; max-width: 350px; }
 
         .card {
             position: relative;
             background: white;
             border-radius: 20px;
-            margin-bottom: 45px; /* Spazio extra per l'icona sopra */
+            margin-bottom: 45px;
             padding: 25px 15px 15px 15px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             text-decoration: none;
             display: block;
         }
 
-        /* Icona che sporge */
         .card-icon {
             position: absolute;
             top: -25px;
@@ -77,48 +87,51 @@
             transform: scale(1.08) translateY(-5px);
         }
 
-        /* Glow dinamico basato sul social */
         .card.twitch-card:hover { box-shadow: 0 0 30px var(--twitch); }
-        .card.youtube-card:hover { box-shadow: 0 0 30px var(--youtube); }
         .card.discord-card:hover { box-shadow: 0 0 30px var(--discord); }
         .card.tiktok-card:hover { box-shadow: 0 0 30px var(--tiktok); }
-        .card.specs-card { background: #333; border: 1px solid #555; }
+        
+        .card.specs-card { 
+            background: #1a1a2e; 
+            border: 1px solid var(--neon-purple); 
+        }
         .card.specs-card .card-title { color: white; }
+        .card.specs-card:hover { box-shadow: 0 0 30px white; }
 
     </style>
 </head>
 <body>
 
     <div class="profile-header">
-        <img src="distru.jpg" class="profile-pic">
-        <h1 style="letter-spacing: 3px;">_Distruzioneh</h1>
-        <p style="opacity: 0.8;">Streamer </p>
+        <img src="distru.jpg" class="profile-pic" alt="Distruzioneh Logo">
+        <h1 style="letter-spacing: 3px; margin-top: 15px;">_Distruzioneh</h1>
+        <p style="opacity: 0.8; font-size: 1.2rem;">Streamer (Twitch / TikTok)</p>
     </div>
 
     <div class="links-container">
         
-        <a href="https://www.twitch.tv/distruzioneh__?sr=a" class="card twitch-card">
+        <a href="https://www.twitch.tv/distruzioneh__?sr=a" target="_blank" class="card twitch-card">
             <div class="card-icon" style="background: var(--twitch);">🟣</div>
             <div class="card-title">_Distruzioneh</div>
-            <div class="card-subtitle">su Twitch</div>
+            <div class="card-subtitle">Live su Twitch</div>
         </a>
 
-        <a href="https://discord.gg/mGn7vvxgp3" class="card discord-card">
+        <a href="https://discord.gg/mGn7vvxgp3" target="_blank" class="card discord-card">
             <div class="card-icon" style="background: var(--discord);">💬</div>
             <div class="card-title">Il Regno di Distru</div>
-            <div class="card-subtitle">Entra nella Community</div>
+            <div class="card-subtitle">Entra nel Server</div>
         </a>
 
-        <a href="https://www.tiktok.com/@_distruzioneh?_r=1&_t=ZN-93f1v03T0ru" class="card tiktok-card">
+        <a href="https://www.tiktok.com/@_distruzioneh?_r=1&_t=ZN-93f1v03T0ru" target="_blank" class="card tiktok-card">
             <div class="card-icon" style="background: #000;">🎵</div>
             <div class="card-title">_Distruzioneh</div>
             <div class="card-subtitle">Seguimi su TikTok</div>
         </a>
 
         <a href="specs.html" class="card specs-card">
-            <div class="card-icon" style="background: #555;">🖥️</div>
+            <div class="card-icon" style="background: #444;">🖥️</div>
             <div class="card-title">PC SPECS</div>
-            <div class="card-subtitle">Il mio Setup da Gaming</div>
+            <div class="card-subtitle">Il mio Hardware</div>
         </a>
 
     </div>
